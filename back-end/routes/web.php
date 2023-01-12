@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GroupesApprenantController;
 use App\Http\Controllers\googleController;
 use App\Http\Controllers\PreparationTacheController;
 use App\Http\Controllers\ProfileController;
@@ -33,7 +34,7 @@ require __DIR__.'/auth.php';
 
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',"auth" ]],function(){
 
-
+// tasks
     Route::resource('task', PreparationTacheController::class);
     Route::get('/',[PreparationTacheController::class,'index'])->name('index');
     Route::get('exportexcel',[PreparationTacheController::class,'exportexcel'])->name('exportexcel');
@@ -43,8 +44,16 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     route::get('/generatepdf',[PreparationTacheController::class,'generatepdf'])->name('generate');
     Route::get('/pagination/fetch_data', [PreparationTacheController::class,'fetch_data'])->name('/pagination/fetch_data');
 
+// Assigner brief
+Route::resource('assign', GroupesApprenantController::class);
+Route::get('filter_par_group',[GroupesApprenantController::class,'filter_par_group'])->name('filter_par_group');
+Route::post('form', [GroupesApprenantController::class,'form_save'])->name('form');
 });
+
+// dashboard
 Route::get('dashboard',[DashboardController::class,"index"])->name('dashboard');;
 
+// google auth
 Route::get('google-auth',[googleController::class,'redirect'])->name('google-auth');
 Route::get('auth/google/call-back',[googleController::class,'callbackGoogle']);
+
