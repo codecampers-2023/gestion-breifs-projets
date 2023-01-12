@@ -47,7 +47,7 @@ class GroupesApprenantController extends Controller
 
                 foreach ($request->check as $key => $name) {
 
-                    DB::table('apprenant_preparation_brief')->insert(
+                    DB::table('brief')->insert(
                         [
                             'Date_affectation' => Carbon::now(),
                             'Preparation_brief_id' => $request->input('select'),
