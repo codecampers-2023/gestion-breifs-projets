@@ -11,11 +11,12 @@ use PhpParser\Node\Stmt\TryCatch;
 
 class GoogleController extends Controller
 {
+// afficher formula de google auth
   function redirect(){
-
   return Socialite::driver('google')->redirect();
   }
 
+// Connexion avec compte google
    function callbackGoogle(){
        try {
            $google_user= Socialite::driver('google')->user();
