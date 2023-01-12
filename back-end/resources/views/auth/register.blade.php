@@ -1,3 +1,4 @@
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -12,8 +13,13 @@
         <!-- Role -->
         <div>
             <x-input-label for="role" :value="__('Role')" />
-            <x-text-input id="role" class="block mt-1 w-full" type="text" name="role" :value="old('role')" required autofocus />
-            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+            <select class="block mt-1 w-full" name="role" id="pet-select" required autofocus>
+                <option value="">--Please choose an option--</option>
+                <option value="admin">admin</option>
+                <option value="apprenant">apprenant</option>
+                <option value="formateur">formateur</option>
+            </select>
+
         </div>
 
         <!-- Email Address -->

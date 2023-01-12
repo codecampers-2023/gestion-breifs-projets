@@ -69,9 +69,10 @@
           <div class="dropdown ">
               @php
               $path = explode("/",$_SERVER['PHP_SELF']);
-
               @endphp
-              @if ($path[2] == "fr")
+              @if ($path[2] == "dashboard")
+
+              @else
 
 
             <button  style="background-color: grey" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
