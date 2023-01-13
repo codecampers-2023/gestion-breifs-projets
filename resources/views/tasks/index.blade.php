@@ -121,5 +121,40 @@ fetch_data(page,query);
 });
 
 });
+$('#filter').on('change',function(){
+          $value=$(this).val();
+          $.ajax({
+              type:'get',
+              url:'{{route("filter_bief")}}',
+              data:{'filter':$value},
+              success:function(data){
+                  console.log(data);
+                  var task=data.dataTask;
+                  var html='';
+                  if(task.length>0){
+                      for(let i=0;i<task.length;i++){
+                          html+=`<tr>
+                                      <td>${task[i]['Nom_tache']}</td>
+                                      <td>${task[i]['Duree']}</td>
+                                      <td><a  href="/task/${task[i]['id']}/edit" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                      <form method="post" action="/task/${task[i]['id']}">
+                                          <input type="hidden" name="_method" value="Delete">\
+                                          <input type="hidden" name="_token" value='{{ csrf_token() }}'>
+                                          <button id="trash-icon" type='submit'>
+                                      <a  class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                  </button></td>
+                                  </tr>`;
+                      }
+                  }
+                  else{
+                      html+=`<tr>\
+                      <td>no tache</td>\
+                      </tr>`;
+                  }
+                  $('tbody').html(html);
+              }
+          });
+      })
+
 </script>
 @endsection
