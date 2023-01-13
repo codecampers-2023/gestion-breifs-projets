@@ -43,10 +43,11 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     route::get('/searchtache',[PreparationTacheController::class,'search_tache'])->name('searchtache');
     route::get('/generatepdf',[PreparationTacheController::class,'generatepdf'])->name('generate');
     Route::get('/pagination/fetch_data', [PreparationTacheController::class,'fetch_data'])->name('/pagination/fetch_data');
- // dashboard
-    Route::get('dashboard',[DashboardController::class,"index"])->name('dashboard');;
-// Assigner brief
-Route::resource('assigner', GroupesApprenantController::class);
-Route::get('filter_par_group',[GroupesApprenantController::class,'filter_par_group'])->name('filter_par_group');
-Route::post('form', [GroupesApprenantController::class,'form_save'])->name('form');
+    // Assigner brief
+    Route::resource('assigner', GroupesApprenantController::class);
+    Route::get('filter_par_group',[GroupesApprenantController::class,'filter_par_group'])->name('filter_par_group');
+    Route::post('form', [GroupesApprenantController::class,'form_save'])->name('form');
 });
+
+// dashboard
+Route::get('dashboard',[DashboardController::class,"index"])->name('dashboard');;
