@@ -61,7 +61,7 @@ class PreparationTacheController extends Controller
     // return page create tache
     public function create()
     {
-        // afficher tous les briefs
+    // afficher tous les briefs
         $brief=PreparationBrief::all();
         // return view
         return view('tasks.create',['brief'=>$brief]);
