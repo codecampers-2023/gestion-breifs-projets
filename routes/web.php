@@ -35,7 +35,7 @@ require __DIR__.'/auth.php';
 
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function(){
 
-// tasks
+    // tasks
     Route::resource('task', PreparationTacheController::class);
     Route::get('/',[PreparationTacheController::class,'index'])->name('index');
     Route::get('exportexcel',[PreparationTacheController::class,'exportexcel'])->name('exportexcel');
