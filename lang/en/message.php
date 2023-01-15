@@ -65,7 +65,9 @@ return[
     'btn_assign'=>'Assignment of Briefs',
     'message_prf'=>'Select a brief, tick the learners concerned by and assign',
     'checkbox_tous'=>'All learners',
-    'btn_affecter'=>'Affect'
+    'btn_affecter'=>'Affect',
+    'title1'=>'Learner management',
+    'apprenant'=>'Learner List',
 
 ]
 
