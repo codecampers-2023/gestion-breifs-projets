@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApprenantController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GroupesApprenantController;
 use App\Http\Controllers\googleController;
@@ -48,4 +49,14 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
       Route::resource('assigner', GroupesApprenantController::class);
       Route::get('filter_par_group',[GroupesApprenantController::class,'filter_par_group'])->name('filter_par_group');
       Route::post('form', [GroupesApprenantController::class,'form_save'])->name('form');
-});
+
+      //Apprenants
+      Route::resource('apprenant', ApprenantController::class);
+      route::get('/pagination/fetch2_data',[ApprenantController::class,'fetch2_data'])->name('/pagination/fetch2_data');
+      Route::get('/pagination/fetch_data', [ApprenantController::class,'fetch_data'])->name('/pagination/fetch_data');
+
+      Route::get('exportexcelapprenant',[ApprenantController::class,'exportexcel'])->name('exportexcelapprenant');
+      Route::post('importexcelapprenant',[ApprenantController::class,'importexcel'])->name('importexcelapprenant');
+      route::get('/generatepdfapprenant',[ApprenantController::class,'generatepdf'])->name('generatepdfapprenant');
+
+    });

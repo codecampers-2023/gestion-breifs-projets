@@ -64,8 +64,9 @@ return[
     'btn_assign'=>'Assignement des Brief',
     'message_prf'=>'Sélectionner une brief, cocher les apprenants concerné par et affecter',
     'checkbox_tous'=>'Tous les apprenants',
-    'btn_affecter'=>'Affecter'
-
+    'btn_affecter'=>'Affecter',
+    'title1'=>'Gestion des apprenant',
+    'apprenant'=>'Liste des apprenant',
 
 
 
