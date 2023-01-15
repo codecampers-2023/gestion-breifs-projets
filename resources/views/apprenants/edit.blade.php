@@ -1,5 +1,5 @@
 @extends('master')
-@section('create')
+@section('content')
 <div class="content-wrapper">
     <section class="content-header">
       <div class="container-fluid">
@@ -55,7 +55,7 @@
                                 <label class="text-muted" for="">{{__('message.date_naissance')}}</label>
                                 <input class="form-control rounded" type="text" placeholder="" value="{{$edit->Date_naissance}}" name="Date_naissance">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.image')}}</label>
                                 <img src="{{ asset('imageapprent')}}/{{ ($edit->Image) }}" alt="" width="80" height="80">
@@ -71,7 +71,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            
+
 
                             <div class="d-flex justify-content-between">
                                 <button class="btn  btn-primary">{{__('message.add')}}</button>
