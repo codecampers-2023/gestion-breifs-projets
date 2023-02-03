@@ -16,11 +16,9 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class PreparationTacheController extends Controller
 {
-
     function __construct()
     {
-        // authorization formateur
-        // $this->middleware("can:isFormateur");
+            $this->Middleware("can:isFormateurOrAdmin");
     }
     //index view
     public function index()

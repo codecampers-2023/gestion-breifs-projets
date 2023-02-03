@@ -1,25 +1,33 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Exports\ApprenantExport;
 use App\Imports\ApprenantImport;
 use App\Models\Apprenant;
 use App\Models\Groupes;
 use App\Models\GroupesApprenant;
-use GMP;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
+use GuzzleHttp\Middleware;
+use Illuminate\Auth\Middleware\Authorize;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ApprenantController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+            $this->Middleware("can:isFormateurOrAdmin");
+    }
+
     public function index()
     {
         $groupes=Groupes::all();
@@ -34,14 +42,14 @@ class ApprenantController extends Controller
     //             ->join('Groupes', 'groupes_apprenant.Groupe_id', '=', 'Groupes.id')
     //             ->where('Groupes.id','Like','%'.$request->filter.'%')
     //             ->get();
-    //             return response(['dataapprenants'=>$apprenants]); 
+    //             return response(['dataapprenants'=>$apprenants]);
     //     }
     //     else{
     //         $apprenants=Apprenant::all();
     //         return response(['dataapprenants'=>$apprenants]);
     //         dd($apprenants);
     //     }
-            
+
     // }
     // public function search_apprenant(Request $request){
     //     $searchapprenat=Apprenant::where('Nom','Like','%'.$request->searchapprenant.'%')->get();
@@ -92,7 +100,7 @@ class ApprenantController extends Controller
     public function create()
     {
         $groupes=Groupes::all();
-        // 
+        //
         return view('apprenants.create',['groupes'=>$groupes]);
     }
 
@@ -114,7 +122,7 @@ class ApprenantController extends Controller
             // 'Date_naissance'=>'required',
             'Image'=>'required|mimes:jpeg,png,jpg,gif',
         ]);
-        
+
         if($request->has('Image')){
         $file=$request->Image;
         $Image=time(). '_' .$file->getClientOriginalName();
@@ -130,13 +138,13 @@ class ApprenantController extends Controller
             'CIN'=>$request->CIN,
             'Date_naissance'=>$request->Date_naissance,
             'Image'=>$Image
-            
+
         ]);
         // GroupesApprenant::create([
 
         //     'Groupe_id'=>$request->Groupe_id,
         //     'Apprenant_id'=>$request->Apprenant_id,
-            
+
         // ]);
 
         return redirect()->route('apprenant.index');
@@ -185,8 +193,8 @@ class ApprenantController extends Controller
         //     'Date_naissance'=>'required',
         //     'Image'=>'required',
         // ]);
-        
-        
+
+
         if($request->has('Imagee')){
             $file=$request->Imagee;
         $Image=time(). '_' .$file->getClientOriginalName();
@@ -203,7 +211,7 @@ class ApprenantController extends Controller
         $update->Adress=$request->get('Adress');
         $update->CIN=$request->get('CIN');
         $update->Date_naissance=$request->get('Date_naissance');
-        
+
         $update->Image=$Image;
         $update->save();
 

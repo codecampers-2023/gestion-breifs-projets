@@ -34,7 +34,7 @@ require __DIR__.'/auth.php';
 
 
 
-Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function(){
+Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',"auth"]],function(){
 
 // tasks
     Route::resource('task', PreparationTacheController::class);

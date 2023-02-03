@@ -11,6 +11,10 @@ use App\Models\apprenant;
 
 class GroupesApprenantController extends Controller
 {
+    function __construct()
+    {
+            $this->Middleware("can:isFormateurOrAdmin");
+    }
     public function index()
     {
         $promo = groupes::all();
