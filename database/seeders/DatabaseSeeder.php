@@ -6,19 +6,17 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 
-
-use App\Models\Apprenant;
-
-use App\Models\Groupes;
+use Database\Seeders\Groupes;
+use Database\Seeders\Studetns_Group;
 
 
 class DatabaseSeeder extends Seeder
 {
   public function run (){
 
+ $this->call(Studetns_Group::class);
+//  $this->call(Groupes::class);
 
-    Groupes::factory(2)->create();
-    Apprenant::factory(5)->create();
 
   }
 }
