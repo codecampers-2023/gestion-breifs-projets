@@ -16,17 +16,6 @@ return new class extends Migration
         Schema::create('groupes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Nom_groupe')->nullable();
-            $table->unsignedInteger("Annee_formation_id")->nullable();
-            $table->foreign("Annee_formation_id")
-                ->references("id")
-                ->on('anne_formation')
-                ->onDelete('cascade');
-            $table->unsignedInteger("Formateur_id")->nullable();
-            $table->foreign("Formateur_id")
-                ->references("id")
-                ->on('formateur')
-                ->onDelete('cascade');
-
             $table->string('Logo')->nullable();
         });
     }
