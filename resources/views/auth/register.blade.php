@@ -15,6 +15,16 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+        <div class="mt-4">
+            <x-input-label for="Role" :value="__('role')" />
+            <select class="block mt-1 w-full"  name="role">
+                <option value="" disabled selected value>select role</option>
+                <option value="apprenant">apprenant</option>
+                <option value="admin">admin</option>
+                <option value="formateur">formateur</option>
+            </select>
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+        </div>
 
         <!-- Password -->
         <div class="mt-4">

@@ -11,6 +11,10 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class PreparationBriefController extends Controller
 {
+    function __construct()
+    {
+            $this->Middleware("can:isFormateurOrAdmin");
+    }
     /**
      * Display a listing of the resource.
      *
@@ -63,7 +67,7 @@ class PreparationBriefController extends Controller
             'Nom_du_brief'=>$request->Nom_du_brief,
             'Description'=>$request->Description,
             'Duree'=>$request->Duree,
-            'Formateur_id '=>$request->Formateur_id 
+            'Formateur_id '=>$request->Formateur_id
         ]);
 
         return to_route('brief.index');

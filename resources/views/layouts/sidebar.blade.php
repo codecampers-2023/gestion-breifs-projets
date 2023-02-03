@@ -26,62 +26,79 @@
                with font-awesome or any other icon font library -->
 
           {{-- <li class="nav-item menu-open"> --}}
-            <a href="/" class="nav-link active">
+            <a href="{{route('dashboard')}} " class="nav-link active">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                {{__('message.btn_taskManag')}}
+                {{__('message.dashboard')}}
                 {{-- <i class="fas fa-angle-left right"></i> --}}
               </p>
             </a>
           </ul>
       </nav>
-    <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      @cannot('isApprenant')
+
+      <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+            with font-awesome or any other icon font library -->
+
+            {{-- <li class="nav-item menu-open"> --}}
+                <a href="/" class="nav-link active">
+                    <i class="nav-icon fas fa-table"></i>
+                    <p>
+                        {{__('message.btn_taskManag')}}
+                        {{-- <i class="fas fa-angle-left right"></i> --}}
+                    </p>
+                </a>
+            </ul>
+        </nav>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-          {{-- <li class="nav-item menu-open"> --}}
-            <a href="{{route("apprenant.index")}}" class="nav-link active">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                {{__('message.title1')}}
-                {{-- <i class="fas fa-angle-left right"></i> --}}
+               {{-- <li class="nav-item menu-open"> --}}
+                   <a href="{{route("apprenant.index")}}" class="nav-link active">
+                    <i class="nav-icon fas fa-table"></i>
+                    <p>
+                        {{__('message.title1')}}
+                        {{-- <i class="fas fa-angle-left right"></i> --}}
               </p>
             </a>
-          </ul>
-      </nav>
-      <nav class="mt-2">
+        </ul>
+    </nav>
+    <nav class="mt-2">
 
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
-                 with font-awesome or any other icon font library -->
+                with font-awesome or any other icon font library -->
 
             {{-- <li class="nav-item menu-open"> --}}
 
               <a href="{{route("assigner.index")}}" class="nav-link active">
                 <i class="nav-icon fas fa-table"></i>
                 <p>
-                  {{ __('message.btn_assign') }}
-                  {{-- <i class="fas fa-angle-left right"></i> --}}
+                    {{ __('message.btn_assign') }}
+                    {{-- <i class="fas fa-angle-left right"></i> --}}
                 </p>
-              </a>
+            </a>
 
             </ul>
 
         </nav>
-      <nav class="mt-2">
+        <nav class="mt-2">
 
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-                 with font-awesome or any other icon font library -->
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                    with font-awesome or any other icon font library -->
 
-            {{-- <li class="nav-item menu-open"> --}}
+                    {{-- <li class="nav-item menu-open"> --}}
 
               <a href="{{route("brief.index")}}" class="nav-link active">
                 <i class="nav-icon fas fa-table"></i>
                 <p>
-                  {{ __('message.titleBrief') }}
-                  {{-- <i class="fas fa-angle-left right"></i> --}}
+                    {{ __('message.titleBrief') }}
+                    {{-- <i class="fas fa-angle-left right"></i> --}}
                 </p>
               </a>
 
@@ -89,8 +106,9 @@
 
         </nav>
 
+        @endcannot
 
-    <!-- /.sidebar-menu -->
-  </div>
-  <!-- /.sidebar -->
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
 </aside>

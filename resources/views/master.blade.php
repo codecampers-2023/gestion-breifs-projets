@@ -25,7 +25,7 @@ $path = explode("/",$_SERVER['PHP_SELF']);
 @endphp
 @if ($path[2] == "dashboard")
 {{-- include head for dashboard --}}
-@include("layouts.head_dashboard")
+{{-- @include("layouts.head_dashboard") --}}
 @else
 <!-- Page specific script -->
 @endif
