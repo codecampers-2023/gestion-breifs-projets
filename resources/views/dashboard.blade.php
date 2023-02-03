@@ -1,6 +1,8 @@
-<x-app-layout>
+@extends("master")
+@section('content')
+<div class="content-wrapper" >
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
@@ -14,4 +16,6 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+
+@endsection
