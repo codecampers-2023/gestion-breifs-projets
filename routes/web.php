@@ -4,6 +4,7 @@ use App\Http\Controllers\ApprenantController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GroupesApprenantController;
 use App\Http\Controllers\googleController;
+use App\Http\Controllers\PreparationBriefController;
 use App\Http\Controllers\PreparationTacheController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -59,5 +60,12 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
       Route::post('importexcelapprenant',[ApprenantController::class,'importexcel'])->name('importexcelapprenant');
       route::get('/generatepdfapprenant',[ApprenantController::class,'generatepdf'])->name('generatepdfapprenant');
 
+      //Briefs
+
+    Route::resource('brief', PreparationBriefController::class);
+    route::get('/generatepdf',[PreparationBriefController::class,'generatepdf'])->name('generate');
+    Route::get('exportexcel',[PreparationBriefController::class,'exportexcel'])->name('exportexcel');
+    Route::post('importexcel',[PreparationBriefController::class,'importexcel'])->name('importexcel');
+    route::get('/searchbrief',[PreparationBriefController::class,'search_brief'])->name('searchbriefs');
 
     });
