@@ -158,7 +158,6 @@ class ApprenantController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**

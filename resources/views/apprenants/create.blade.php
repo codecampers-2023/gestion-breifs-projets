@@ -47,6 +47,51 @@
                                 <label class="text-muted" for="">{{__('message.adress')}}</label>
                                 <input class="form-control rounded" type="text" placeholder="" name="Adress">
                             </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.Etudiant_actif')}}</label>
+                                <select class="form-control rounded"  placeholder="" name="Etudiant_actif">
+                                    <option disabled selected value> -- select an option -- </option>
+                                    <option value="Oui">Oui</option>
+                                <option value="Non">Non</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.Date_inscription')}}</label>
+                                <input class="form-control rounded" type="date" placeholder="" name="Date_inscription">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.Sexe')}}</label>
+                                <select class="form-control rounded"  placeholder="" name="Sexe">
+                                    <option disabled selected value> -- select an option -- </option>
+                                    <option value="Homme">Homme</option>
+                                <option value="Femme">Femme</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.Diplome')}}</label>
+                                <input class="form-control rounded" type="text" placeholder="" name="Diplome">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.Lieu_naissance')}}</label>
+                                <input class="form-control rounded" type="text" placeholder="" name="Lieu_naissance">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.Nom_arabe')}}</label>
+                                <input class="form-control rounded" type="text" placeholder="" name="Nom_arabe">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.Prenom_arabe')}}</label>
+                                <input class="form-control rounded" type="text" placeholder="" name="Prenom_arabe">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.Niveau_Scoliare')}}</label>
+                                <input class="form-control rounded" type="text" placeholder="" name="Niveau_Scoliare">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-muted" for="">{{__('message.adress')}}</label>
+                                <input class="form-control rounded" type="text" placeholder="" name="Adress">
+                            </div>
+
 
                             <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.cin')}}</label>
@@ -58,7 +103,7 @@
 
                             <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.date_naissance')}}</label>
-                                <input class="form-control rounded" type="text" placeholder="" name="Date_naissance">
+                                <input class="form-control rounded" type="date" placeholder="" name="Date_naissance">
                             </div>
 
                             <div class="form-group">
@@ -71,7 +116,7 @@
                             <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.group')}}</label>
                                 <select class="btn form-control rounded btn-secondary dropdown-toggle ml-2" name="Preparation_brief_id" id="Preparation_brief_id">
-                                    <option value="">{{__('message.all_groups')}}</option>
+                                    <option disabled selected value>{{__('message.all_groups')}}</option>
                                     @foreach ($groupes as $value)
                                     <option value="{{$value->id}}">{{$value->Nom_groupe}}</option>
                                     @endforeach
@@ -80,7 +125,7 @@
 
 
                             <div class="d-flex justify-content-between">
-                                <button class="btn  btn-primary">{{__('message.add')}}</button>
+                                <button class="btn btn-primary">{{__('message.add')}}</button>
                                 <a class="btn  btn-secondary" href="{{ route('apprenant.index') }}">{{__('message.cancel')}}</a>
                             </div>
 

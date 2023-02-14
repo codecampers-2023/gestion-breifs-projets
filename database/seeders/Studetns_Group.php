@@ -16,10 +16,10 @@ class Studetns_Group extends Seeder
      */
     public function run()
     {
-     
+
 
         $students = [
-            ['nom' => 'Tebbaa', 'Prenom' => "Adnane"],  
+            ['nom' => 'Tebbaa', 'Prenom' => "Adnane"],
             ['nom' => 'ElMliki', 'Prenom' => "Hicham"],
             ['nom' => 'Merradou', 'Prenom' => "Abderahmane"],
             ['nom' => 'Yahya', 'Prenom' => "Mohammed"],
@@ -32,7 +32,7 @@ class Studetns_Group extends Seeder
             ['nom' => 'Ahouzi', 'Prenom' => "Hasane"],
             ['nom' => 'Elkaissi', 'Prenom' => "Zayd"],
             ['nom' => 'Ben-ayad', 'Prenom' => "Aicha"],
-            // 
+            //
             ['nom' => 'Madani', 'Prenom' => "Madani"],
             ['nom' => 'Mustrafa', 'Prenom' => "Madan"],
             ['nom' => 'Mohamed', 'Prenom' => "Madani"],
@@ -44,7 +44,7 @@ class Studetns_Group extends Seeder
         ];
 
         $groups = [
-            ['Nom_groupe' => 'CodeCampers'],  
+            ['Nom_groupe' => 'CodeCampers'],
             ['Nom_groupe' => 'Debuggers'],
         ];
 
