@@ -55,7 +55,7 @@
               <th>{{__('message.prenom')}}</th>
           </tr>
       </thead>
-      <tbody>
+      <tbody style="overflow-x: scroll">
         @include('apprenants.apprenant_data')
     </tbody>
   </table>
