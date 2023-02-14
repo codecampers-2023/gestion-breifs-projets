@@ -58,7 +58,7 @@
 
                             <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.image')}}</label>
-                                <img src="{{ asset('imageapprent')}}/{{ ($edit->Image) }}" alt="" width="80" height="80">
+                                <img src="{{ !$value->Image ? "https://icon-library.com/images/person-head-icon/person-head-icon-27.jpg" : asset('./images/apprenant/'.$value->Image)}}" alt="" width="80" height="80">
                                 <input type="hidden" name="image" value="{{ $edit->Image }}">
                                 <input type="file" name="Imagee" id="Imagee" value="{{$edit->Image}}" >
                             </div>

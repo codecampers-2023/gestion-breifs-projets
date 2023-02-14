@@ -126,7 +126,7 @@ class ApprenantController extends Controller
         if($request->has('Image')){
         $file=$request->Image;
         $Image=time(). '_' .$file->getClientOriginalName();
-        $file->move(public_path('imageapprent'),$Image);
+        $file->move(public_path('images/apprenant'),$Image);
         }
         Apprenant::create([
 
@@ -197,7 +197,7 @@ class ApprenantController extends Controller
         if($request->has('Imagee')){
             $file=$request->Imagee;
         $Image=time(). '_' .$file->getClientOriginalName();
-        $file->move(public_path('imageapprent'),$Image);
+        $file->move(public_path('images/apprenant'),$Image);
         }
         else{
             $Image= $request->input("image");

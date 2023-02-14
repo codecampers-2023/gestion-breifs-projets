@@ -34,7 +34,7 @@ class Studetns_Group extends Seeder
             ['nom' => 'Ben-ayad', 'Prenom' => "Aicha"],
             //
             ['nom' => 'Madani', 'Prenom' => "Madani"],
-            ['nom' => 'Mustrafa', 'Prenom' => "Madan"],
+            ['nom' => 'Mustrafa', 'Prenom' => "Madani"],
             ['nom' => 'Mohamed', 'Prenom' => "Madani"],
             ['nom' => 'Majdi', 'Prenom' => "Madani"],
             ['nom' => 'Maher', 'Prenom' => "Madani"],

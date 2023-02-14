@@ -41,9 +41,6 @@ return new class extends Migration
          $table->date('date_fin');
          $table->string('reference'); // to verify if column type should be Year.
         });
-
-
-
     }
 
 

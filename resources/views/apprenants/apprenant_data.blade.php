@@ -1,6 +1,6 @@
 @foreach ($data as $value )
         <tr>
-            <td><img src="{{asset('./imageapprent/'.$value->Image)}}" alt="" width="80" height="80"></td>
+            <td><img src="{{ !$value->Image ? "https://icon-library.com/images/person-head-icon/person-head-icon-27.jpg" : asset('./images/apprenant/'.$value->Image)}}" alt="" width="40"></td>
             <td>{{ $value->Nom }}</td>
             <td>{{ $value->Prenom }}</td>
             <td>
