@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string("Nom")->nullable();
             $table->string("Prenom")->nullable();
             $table->string("Email")->nullable();
-            $table->string("Phone")->nullable();
-            $table->string("Adress")->nullable();
+            $table->string("Address")->nullable();
             $table->string("CIN")->nullable();
             $table->date("Date_naissance")->nullable();
             $table->string("Image")->nullable();
@@ -34,7 +33,7 @@ return new class extends Migration
             $table->string("Prenom_arabe")->nullable();
             $table->string("Niveau_Scoliare")->nullable();
         });
-
+        
         // Sprint 1
         Schema::create('annee_formation', function (Blueprint $table) {
          $table->increments('id');
@@ -42,9 +41,6 @@ return new class extends Migration
          $table->date('date_fin');
          $table->string('reference'); // to verify if column type should be Year.
         });
-
-
-
     }
 
     
