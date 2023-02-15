@@ -17,8 +17,8 @@
 
 > composer install 
 
-> php artisan key:generate
-
 > php atisan migrate
+
+> php artisan key:generate
 
 > php artisan serve
