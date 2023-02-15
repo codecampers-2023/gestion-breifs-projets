@@ -9,7 +9,8 @@
 
 > cd gestion-breifs-projets
 
-> copy .env.example  .env
+> copy .env.example  .env 
+(puis modifiez le fichier .env comme indiqué ci-dessus.)
 
 ### Étape 2 :
 - dans votre console, initialisez le projet en utilisant les commandes suivantes : 
