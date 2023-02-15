@@ -28,16 +28,13 @@ return new class extends Migration
             $table->string("Sexe")->nullable();
             $table->string("Diplome")->nullable();
             $table->string("Lieu_naissance")->nullable();
-            $table->integer("Numero_telephone")->nullable(); //test.
+            $table->integer("Numero_telephone")->nullable(); 
             $table->string("Nom_arabe")->nullable();
             $table->string("Prenom_arabe")->nullable();
             $table->string("Niveau_Scolaire")->nullable();
         });
 
     }
-
-
-
     /**
      * Reverse the migrations.
      *
