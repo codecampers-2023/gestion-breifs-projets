@@ -163,7 +163,7 @@
                                 <input type="hidden" name="image" value="{{ $edit->Image }}">
                                 <input type="file" name="Imagee" id="Imagee" value="{{$edit->Image}}" >
                             </div>
-                            {{-- <div class="form-group">
+                            <div class="form-group">
                                 <label class="text-muted" for="">{{__('message.group')}}</label>
                                 <select class="btn form-control rounded btn-secondary dropdown-toggle ml-2" name="Preparation_brief_id" id="Preparation_brief_id">
                                     <option value="">select group</option>
@@ -171,7 +171,7 @@
                                     <option value="{{$value->id}}">{{$value->Nom_groupe}}</option>
                                     @endforeach
                                 </select>
-                            </div> --}}
+                            </div>
 
 
                             <div class="d-flex justify-content-between">

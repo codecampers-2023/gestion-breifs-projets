@@ -1,6 +1,6 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" style="background-color:#343a40">
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
