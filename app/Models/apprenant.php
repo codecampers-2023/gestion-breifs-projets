@@ -20,8 +20,16 @@ class Apprenant extends Model
         "Adress",
         "CIN",
         "Date_naissance",
-        "Image"
-    ]; 
+        "Image",
+        "Etudiant_actif",
+        "Date_inscription",
+        "Sexe",
+        "Diplome",
+        "Lieu_naissance",
+        "Nom_arabe",
+        "Prenom_arabe",
+        "Niveau_Scolaire",
+    ];
     public function groups(){
         return $this->belongsToMany(Groupes::class, 'groupes_apprenant');
     }

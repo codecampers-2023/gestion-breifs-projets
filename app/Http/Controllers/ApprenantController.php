@@ -112,40 +112,54 @@ class ApprenantController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'Nom'=>'required|max:50',
-            // 'Prenom'=>'required',
-            // 'Email'=>'required',
-            // 'Phone'=>'required',
-            // 'Adress'=>'required',
-            'CIN'=>'required',
-            // 'Date_naissance'=>'required',
-            'Image'=>'required|mimes:jpeg,png,jpg,gif',
+
+         $validation = $request->validate([
+            'Nom' => 'required|max:255',
+            'Prenom' => 'required|max:255',
+            'Email' => 'required|email|unique:apprenant',
+            'Phone' => 'required|max:255',
+            'Adress' => 'required|max:255',
+            'CIN' => 'required|max:255',
+            'Date_naissance' => 'required|date',
+            'Image' => 'required',
+
+            'Etudiant_actif' => 'required|in:true,false',
+            'Date_inscription' => 'required|date',
+            'Sexe' => 'required|in:male,female',
+            'Diplome' => 'required|in:non,oui',
+            'Lieu_naissance' => 'required|max:255',
+            'Nom_arabe' => 'required|max:255',
+            'Prenom_arabe' => 'required|max:255',
+            'Niveau_Scolaire' => 'required|max:255',
         ]);
+
 
         if($request->has('Image')){
         $file=$request->Image;
         $Image=time(). '_' .$file->getClientOriginalName();
         $file->move(public_path('images/apprenant'),$Image);
         }
-        Apprenant::create([
 
+       $create =  Apprenant::create([
             'Nom'=>$request->Nom,
             'Prenom'=>$request->Prenom,
             'Email'=>$request->Email,
-            'Phone'=>$request->Phone,
+            'Numero_telephone'=>$request->Phone,
             'Adress'=>$request->Adress,
             'CIN'=>$request->CIN,
             'Date_naissance'=>$request->Date_naissance,
-            'Image'=>$Image
+            'Image'=>$Image,
+
+            "Etudiant_actif"=>$request->Etudiant_actif,
+            "Date_inscription"=>$request->Date_inscription,
+            "Sexe"=>$request->Sexe,
+            "Diplome"=>$request->Diplome,
+            "Lieu_naissance"=>$request->Lieu_naissance,
+            "Nom_arabe"=>$request->Nom_arabe,
+            "Prenom_arabe"=>$request->Prenom_arabe,
+            "Niveau_Scolaire"=>$request->Niveau_Scolaire,
 
         ]);
-        // GroupesApprenant::create([
-
-        //     'Groupe_id'=>$request->Groupe_id,
-        //     'Apprenant_id'=>$request->Apprenant_id,
-
-        // ]);
 
         return redirect()->route('apprenant.index');
     }
