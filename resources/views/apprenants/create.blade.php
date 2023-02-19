@@ -35,32 +35,32 @@
                                         <label class="text-muted" for="">{{ __('message.prenom') }}</label>
                                         <input class="form-control rounded" type="text" placeholder="" name="Prenom">
                                         @error('Prenom')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label class="text-muted" for="">{{ __('message.email') }}</label>
                                         <input class="form-control rounded" type="text" placeholder="" name="Email">
                                         @error('Email')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label class="text-muted" for="">{{ __('message.phone') }}</label>
                                         <input class="form-control rounded" type="text" placeholder="" name="Phone">
                                         @error('Phone')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label class="text-muted" for="">{{ __('message.adress') }}</label>
                                         <input class="form-control rounded" type="text" placeholder="" name="Adress">
                                         @error('Adress')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label class="text-muted" for="">{{ __('message.Etudiant_actif') }}</label>
@@ -70,15 +70,15 @@
                                             <option value="false">Non</option>
                                         </select>
                                         @error('Etudiant_actif')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label class="text-muted"
                                             for="">{{ __('message.Date_inscription') }}</label>
                                         <input class="form-control rounded" type="date" placeholder=""
                                             name="Date_inscription">
-                                            @error('Date_inscription')
+                                        @error('Date_inscription')
                                             <label style="color: red;">{{ $message }}</label>
                                         @enderror
                                     </div>
@@ -90,8 +90,8 @@
                                             <option value="female">Femme</option>
                                         </select>
                                         @error('Sexe')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label class="text-muted" for="">{{ __('message.Diplome') }}</label>
@@ -101,29 +101,30 @@
                                             <option value="non">Non</option>
                                         </select>
                                         @error('Diplome')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label class="text-muted" for="">{{ __('message.Lieu_naissance') }}</label>
                                         <input class="form-control rounded" type="text" placeholder=""
-                                        name="Lieu_naissance">
+                                            name="Lieu_naissance">
                                         @error('Lieu_naissance')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label class="text-muted" for="">{{ __('message.Nom_arabe') }}</label>
-                                        <input class="form-control rounded" type="text" placeholder="" name="Nom_arabe">
+                                        <input class="form-control rounded" type="text" placeholder=""
+                                            name="Nom_arabe">
                                         @error('Nom_arabe')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label class="text-muted" for="">{{ __('message.Prenom_arabe') }}</label>
                                         <input class="form-control rounded" type="text" placeholder=""
                                             name="Prenom_arabe">
-                                            @error('Prenom_arabe')
+                                        @error('Prenom_arabe')
                                             <label style="color: red;">{{ $message }}</label>
                                         @enderror
 
@@ -133,7 +134,7 @@
                                             for="">{{ __('message.Niveau_Scoliare') }}</label>
                                         <input class="form-control rounded" type="text" placeholder=""
                                             name="Niveau_Scolaire">
-                                            @error('Niveau_Scolaire')
+                                        @error('Niveau_Scolaire')
                                             <label style="color: red;">{{ $message }}</label>
                                         @enderror
                                     </div>
@@ -151,10 +152,10 @@
                                         <label class="text-muted"
                                             for="">{{ __('message.date_naissance') }}</label>
                                         <input class="form-control rounded" type="date" placeholder=""
-                                        name="Date_naissance">
+                                            name="Date_naissance">
                                         @error('Date_naissance')
-                                        <label style="color: red;">{{ $message }}</label>
-                                    @enderror
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">

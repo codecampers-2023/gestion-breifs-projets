@@ -196,37 +196,55 @@ class ApprenantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'Nom'=>'required|max:50',
-        //     'Prenom'=>'required',
-        //     'Email'=>'required',
-        //     'Phone'=>'required',
-        //     'Adress'=>'required',
-        //     'CIN'=>'required',
-        //     'Date_naissance'=>'required',
-        //     'Image'=>'required',
-        // ]);
+        $validation = $request->validate([
+            'Nom' => 'max:255',
+            'Prenom' => 'max:255',
+            'Email' => 'email',
+            'Phone' => 'max:255',
+            'Adress' => 'max:255',
+            'CIN' => 'max:255',
+            'Date_naissance' => 'date',
+
+            'Etudiant_actif' => 'in:true,false',
+            'Date_inscription' => 'date',
+            'Sexe' => 'in:male,female',
+            'Diplome' => 'in:non,oui',
+            'Lieu_naissance' => 'max:255',
+            'Nom_arabe' => 'max:255',
+            'Prenom_arabe' => 'max:255',
+            'Niveau_Scolaire' => 'max:255',
+        ]);
 
 
-        if($request->has('Imagee')){
+        if($request->Imagee){
             $file=$request->Imagee;
         $Image=time(). '_' .$file->getClientOriginalName();
         $file->move(public_path('images/apprenant'),$Image);
         }
         else{
-            $Image= $request->input("image");
+            $Image= $request->image;
         }
-        $update=Apprenant::findOrFail($id);
-        $update->Nom=$request->get('Nom');
-        $update->Prenom=$request->get('Prenom');
-        $update->Email=$request->get('Email');
-        $update->Phone=$request->get('Phone');
-        $update->Adress=$request->get('Adress');
-        $update->CIN=$request->get('CIN');
-        $update->Date_naissance=$request->get('Date_naissance');
 
-        $update->Image=$Image;
-        $update->save();
+        $create =  Apprenant::findOrFail($id)->update([
+            'Nom'=>$request->Nom,
+            'Prenom'=>$request->Prenom,
+            'Email'=>$request->Email,
+            'Numero_telephone'=>$request->Phone,
+            'Adress'=>$request->Adress,
+            'CIN'=>$request->CIN,
+            'Date_naissance'=>$request->Date_naissance,
+            'Image'=>$Image,
+
+            "Etudiant_actif"=>$request->Etudiant_actif,
+            "Date_inscription"=>$request->Date_inscription,
+            "Sexe"=>$request->Sexe,
+            "Diplome"=>$request->Diplome,
+            "Lieu_naissance"=>$request->Lieu_naissance,
+            "Nom_arabe"=>$request->Nom_arabe,
+            "Prenom_arabe"=>$request->Prenom_arabe,
+            "Niveau_Scolaire"=>$request->Niveau_Scolaire,
+
+        ]);
 
 
         return redirect('/apprenant')->with('success');
