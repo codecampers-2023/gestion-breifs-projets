@@ -47,7 +47,7 @@ return[
     'pdf_title'=>'To do-list',
     'brief'=>'brief',
     'edit_task'=>'Modifier les tâches',
-    'prenom'=>'prenom',
+    'prenom'=>'Prenom',
     'image'=>'image',
     'adress'=>'address',
     'email'=>'email',

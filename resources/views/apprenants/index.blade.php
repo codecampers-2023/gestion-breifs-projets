@@ -53,6 +53,7 @@
               <th>{{__('message.image')}}</th>
               <th>{{__('message.name')}}</th>
               <th>{{__('message.prenom')}}</th>
+              <th>{{__('message.actions')}}</th>
           </tr>
       </thead>
       <tbody style="overflow-x: scroll">

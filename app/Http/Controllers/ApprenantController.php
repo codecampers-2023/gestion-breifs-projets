@@ -31,7 +31,7 @@ class ApprenantController extends Controller
     public function index()
     {
         $groupes=Groupes::all();
-        $apprenant =Apprenant::paginate(2);
+        $apprenant =Apprenant::paginate(6);
         return view('apprenants.index',['groupes'=>$groupes,'data'=>$apprenant]);
     }
     // public function filter_group(Request $request){
@@ -65,7 +65,7 @@ class ApprenantController extends Controller
       $data = DB::table('apprenant')
                     ->where('Nom', 'like', '%'.$query.'%')
                     // ->orWhere('Nom_tache', 'like', '%'.$query.'%')
-                    ->paginate(2);
+                    ->paginate(6);
                     // dd($data);
       return view('apprenants.apprenant_data', compact('data'))->render();
      }
@@ -82,12 +82,12 @@ class ApprenantController extends Controller
                 ->join('groupes_apprenant', 'apprenant.id', '=', 'groupes_apprenant.Apprenant_id')
                 ->join('Groupes', 'groupes_apprenant.Groupe_id', '=', 'Groupes.id')
                 ->where('Groupes.id','Like','%'.$query.'%')
-                ->paginate(2);
+                ->paginate(6);
                 // dd($data);
                 return view('apprenants.apprenant_data', compact('data'))->render();
         }
         else{
-            $data =Apprenant::paginate(2);
+            $data =Apprenant::paginate(6);
         return view('apprenants.apprenant_data', compact('data'))->render();
         }
      }
