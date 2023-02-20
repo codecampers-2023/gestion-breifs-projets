@@ -74,7 +74,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label class="text-muted" for="">{{ __('message.Sexe') }}</label>
+                                        <label class="text-muted" for="">{{ __('message.sexe') }}</label>
                                         <select class="form-control rounded" placeholder="" name="Sexe">
                                             <option disabled selected value> -- select an option -- </option>
                                             <option value="male">Homme</option>
@@ -97,97 +97,10 @@
                                 </div>
                             </div>
 
+
                             <div class="col-md-6">
-                                <div class="card card-secondary">
-                                <div class="card-header">
-                                </div>
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label class="text-muted" for="">{{ __('message.Nom_arabe') }}</label>
-                                        <input class="form-control rounded" type="text" placeholder=""
-                                            name="Nom_arabe">
-                                        @error('Nom_arabe')
-                                            <label style="color: red;">{{ $message }}</label>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="text-muted" for="">{{ __('message.Prenom_arabe') }}</label>
-                                        <input class="form-control rounded" type="text" placeholder=""
-                                            name="Prenom_arabe">
-                                        @error('Prenom_arabe')
-                                            <label style="color: red;">{{ $message }}</label>
-                                        @enderror
 
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="text-muted" for="">{{ __('message.Lieu_naissance') }}</label>
-                                        <input class="form-control rounded" type="text" placeholder=""
-                                            name="Lieu_naissance">
-                                        @error('Lieu_naissance')
-                                            <label style="color: red;">{{ $message }}</label>
-                                        @enderror
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="text-muted"
-                                            for="">{{ __('message.Niveau_Scoliare') }}</label>
-                                        <input class="form-control rounded" type="text" placeholder=""
-                                            name="Niveau_Scolaire">
-                                        @error('Niveau_Scolaire')
-                                            <label style="color: red;">{{ $message }}</label>
-                                        @enderror
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                                <div class="card card-secondary">
-                                <div class="card-header">
-                                </div>
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label class="text-muted" for="">{{ __('message.Etudiant_actif') }}</label>
-                                        <select class="form-control rounded" placeholder="" name="Etudiant_actif">
-                                            <option disabled selected value> -- select an option -- </option>
-                                            <option value="true">Oui</option>
-                                            <option value="false">Non</option>
-                                        </select>
-                                        @error('Etudiant_actif')
-                                            <label style="color: red;">{{ $message }}</label>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="text-muted"
-                                            for="">{{ __('message.Date_inscription') }}</label>
-                                        <input class="form-control rounded" type="date" placeholder=""
-                                            name="Date_inscription">
-                                        @error('Date_inscription')
-                                            <label style="color: red;">{{ $message }}</label>
-                                        @enderror
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="text-muted" for="">{{ __('message.Diplome') }}</label>
-                                        <select class="form-control rounded" placeholder="" name="Diplome">
-                                            <option disabled selected value> -- select an option -- </option>
-                                            <option value="oui">Oui</option>
-                                            <option value="non">Non</option>
-                                        </select>
-                                        @error('Diplome')
-                                            <label style="color: red;">{{ $message }}</label>
-                                        @enderror
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-
-
-
-                                <div class="card card-secondary">
+                            <div class="card card-secondary">
                                 <div class="card-header">
 
                                 </div>
@@ -223,6 +136,96 @@
 
                                 <!-- /.card-body -->
                             </div>
+                                <div class="card card-secondary">
+                                <div class="card-header">
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label class="text-muted" for="">{{ __('message.nom_arabe') }}</label>
+                                        <input class="form-control rounded" type="text" placeholder=""
+                                            name="Nom_arabe">
+                                        @error('Nom_arabe')
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-muted" for="">{{ __('message.prenom_arabe') }}</label>
+                                        <input class="form-control rounded" type="text" placeholder=""
+                                            name="Prenom_arabe">
+                                        @error('Prenom_arabe')
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-muted" for="">{{ __('message.lieu_naissance') }}</label>
+                                        <input class="form-control rounded" type="text" placeholder=""
+                                            name="Lieu_naissance">
+                                        @error('Lieu_naissance')
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="text-muted"
+                                            for="">{{ __('message.niveau_Scolaire') }}</label>
+                                        <input class="form-control rounded" type="text" placeholder=""
+                                            name="Niveau_Scolaire">
+                                        @error('Niveau_Scolaire')
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <!-- /.card-body -->
+                                <div class="card card-secondary">
+                                <div class="card-header">
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label class="text-muted" for="">{{ __('message.etudiant_actif') }}</label>
+                                        <select class="form-control rounded" placeholder="" name="Etudiant_actif">
+                                            <option disabled selected value> -- select an option -- </option>
+                                            <option value="true">Oui</option>
+                                            <option value="false">Non</option>
+                                        </select>
+                                        @error('Etudiant_actif')
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-muted"
+                                            for="">{{ __('message.date_inscription') }}</label>
+                                        <input class="form-control rounded" type="date" placeholder=""
+                                            name="Date_inscription">
+                                        @error('Date_inscription')
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="text-muted" for="">{{ __('message.diplome') }}</label>
+                                        <select class="form-control rounded" placeholder="" name="Diplome">
+                                            <option disabled selected value> -- select an option -- </option>
+                                            <option value="oui">Oui</option>
+                                            <option value="non">Non</option>
+                                        </select>
+                                        @error('Diplome')
+                                            <label style="color: red;">{{ $message }}</label>
+                                        @enderror
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+
+
+
                         </div>
                     </form>
                     </div>
