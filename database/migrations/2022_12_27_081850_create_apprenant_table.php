@@ -18,14 +18,23 @@ return new class extends Migration
             $table->string("Nom")->nullable();
             $table->string("Prenom")->nullable();
             $table->string("Email")->nullable();
-            $table->string("Phone")->nullable();
             $table->string("Adress")->nullable();
             $table->string("CIN")->nullable();
-            $table->date("Date_naissance")->nullable();
+            $table->string("Date_naissance")->nullable();
             $table->string("Image")->nullable();
+            // Sprint 1.
+            $table->string("Etudiant_actif")->nullable();
+            $table->string("Date_inscription")->nullable();
+            $table->string("Sexe")->nullable();
+            $table->string("Diplome")->nullable();
+            $table->string("Lieu_naissance")->nullable();
+            $table->integer("Numero_telephone")->nullable(); 
+            $table->string("Nom_arabe")->nullable();
+            $table->string("Prenom_arabe")->nullable();
+            $table->string("Niveau_Scolaire")->nullable();
         });
-    }
 
+    }
     /**
      * Reverse the migrations.
      *

@@ -47,7 +47,7 @@ return[
     'pdf_title'=>'To do-list',
     'brief'=>'brief',
     'edit_task'=>'Modifier les tâches',
-    'prenom'=>'prenom',
+    'prenom'=>'Prenom',
     'image'=>'image',
     'adress'=>'address',
     'email'=>'email',
@@ -67,6 +67,14 @@ return[
     'btn_affecter'=>'Affecter',
     'title1'=>'Gestion des apprenant',
     'apprenant'=>'Liste des apprenant',
+    "sexe" => "Genre",
+    "nom_arabe" => "Nom en arabe",
+    "prenom_arabe" => "Prénom en arabe",
+    "lieu_naissance" => "Lieu de naissance",
+    "niveau_Scolaire" => "Niveau d'études",
+    "etudiant_actif" => "Étudiant actif",
+    "date_inscription" => "Date d'inscription",
+    "diplome" => "Diplôme"
 
 
 

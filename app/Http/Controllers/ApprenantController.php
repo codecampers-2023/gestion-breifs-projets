@@ -31,7 +31,7 @@ class ApprenantController extends Controller
     public function index()
     {
         $groupes=Groupes::all();
-        $apprenant =Apprenant::paginate(2);
+        $apprenant =Apprenant::paginate(6);
         return view('apprenants.index',['groupes'=>$groupes,'data'=>$apprenant]);
     }
     // public function filter_group(Request $request){
@@ -65,7 +65,7 @@ class ApprenantController extends Controller
       $data = DB::table('apprenant')
                     ->where('Nom', 'like', '%'.$query.'%')
                     // ->orWhere('Nom_tache', 'like', '%'.$query.'%')
-                    ->paginate(2);
+                    ->paginate(6);
                     // dd($data);
       return view('apprenants.apprenant_data', compact('data'))->render();
      }
@@ -82,12 +82,12 @@ class ApprenantController extends Controller
                 ->join('groupes_apprenant', 'apprenant.id', '=', 'groupes_apprenant.Apprenant_id')
                 ->join('Groupes', 'groupes_apprenant.Groupe_id', '=', 'Groupes.id')
                 ->where('Groupes.id','Like','%'.$query.'%')
-                ->paginate(2);
+                ->paginate(6);
                 // dd($data);
                 return view('apprenants.apprenant_data', compact('data'))->render();
         }
         else{
-            $data =Apprenant::paginate(2);
+            $data =Apprenant::paginate(6);
         return view('apprenants.apprenant_data', compact('data'))->render();
         }
      }
@@ -112,40 +112,54 @@ class ApprenantController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'Nom'=>'required|max:50',
-            // 'Prenom'=>'required',
-            // 'Email'=>'required',
-            // 'Phone'=>'required',
-            // 'Adress'=>'required',
-            'CIN'=>'required',
-            // 'Date_naissance'=>'required',
-            'Image'=>'required|mimes:jpeg,png,jpg,gif',
+
+         $validation = $request->validate([
+            'Nom' => 'required|max:255',
+            'Prenom' => 'required|max:255',
+            'Email' => 'required|email|unique:apprenant',
+            'Phone' => 'required|max:255',
+            'Adress' => 'required|max:255',
+            'CIN' => 'required|max:255',
+            'Date_naissance' => 'required|date',
+            'Image' => 'required',
+
+            'Etudiant_actif' => 'required|in:true,false',
+            'Date_inscription' => 'required|date',
+            'Sexe' => 'required|in:male,female',
+            'Diplome' => 'required|in:non,oui',
+            'Lieu_naissance' => 'required|max:255',
+            'Nom_arabe' => 'required|max:255',
+            'Prenom_arabe' => 'required|max:255',
+            'Niveau_Scolaire' => 'required|max:255',
         ]);
+
 
         if($request->has('Image')){
         $file=$request->Image;
         $Image=time(). '_' .$file->getClientOriginalName();
-        $file->move(public_path('imageapprent'),$Image);
+        $file->move(public_path('images/apprenant'),$Image);
         }
-        Apprenant::create([
 
+       $create =  Apprenant::create([
             'Nom'=>$request->Nom,
             'Prenom'=>$request->Prenom,
             'Email'=>$request->Email,
-            'Phone'=>$request->Phone,
+            'Numero_telephone'=>$request->Phone,
             'Adress'=>$request->Adress,
             'CIN'=>$request->CIN,
             'Date_naissance'=>$request->Date_naissance,
-            'Image'=>$Image
+            'Image'=>$Image,
+
+            "Etudiant_actif"=>$request->Etudiant_actif,
+            "Date_inscription"=>$request->Date_inscription,
+            "Sexe"=>$request->Sexe,
+            "Diplome"=>$request->Diplome,
+            "Lieu_naissance"=>$request->Lieu_naissance,
+            "Nom_arabe"=>$request->Nom_arabe,
+            "Prenom_arabe"=>$request->Prenom_arabe,
+            "Niveau_Scolaire"=>$request->Niveau_Scolaire,
 
         ]);
-        // GroupesApprenant::create([
-
-        //     'Groupe_id'=>$request->Groupe_id,
-        //     'Apprenant_id'=>$request->Apprenant_id,
-
-        // ]);
 
         return redirect()->route('apprenant.index');
     }
@@ -158,7 +172,6 @@ class ApprenantController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -183,37 +196,55 @@ class ApprenantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'Nom'=>'required|max:50',
-        //     'Prenom'=>'required',
-        //     'Email'=>'required',
-        //     'Phone'=>'required',
-        //     'Adress'=>'required',
-        //     'CIN'=>'required',
-        //     'Date_naissance'=>'required',
-        //     'Image'=>'required',
-        // ]);
+        $validation = $request->validate([
+            'Nom' => 'max:255',
+            'Prenom' => 'max:255',
+            'Email' => 'email',
+            'Phone' => 'max:255',
+            'Adress' => 'max:255',
+            'CIN' => 'max:255',
+            'Date_naissance' => 'date',
+
+            'Etudiant_actif' => 'in:true,false',
+            'Date_inscription' => 'date',
+            'Sexe' => 'in:male,female',
+            'Diplome' => 'in:non,oui',
+            'Lieu_naissance' => 'max:255',
+            'Nom_arabe' => 'max:255',
+            'Prenom_arabe' => 'max:255',
+            'Niveau_Scolaire' => 'max:255',
+        ]);
 
 
-        if($request->has('Imagee')){
+        if($request->Imagee){
             $file=$request->Imagee;
         $Image=time(). '_' .$file->getClientOriginalName();
-        $file->move(public_path('imageapprent'),$Image);
+        $file->move(public_path('images/apprenant'),$Image);
         }
         else{
-            $Image= $request->input("image");
+            $Image= $request->image;
         }
-        $update=Apprenant::findOrFail($id);
-        $update->Nom=$request->get('Nom');
-        $update->Prenom=$request->get('Prenom');
-        $update->Email=$request->get('Email');
-        $update->Phone=$request->get('Phone');
-        $update->Adress=$request->get('Adress');
-        $update->CIN=$request->get('CIN');
-        $update->Date_naissance=$request->get('Date_naissance');
 
-        $update->Image=$Image;
-        $update->save();
+        $create =  Apprenant::findOrFail($id)->update([
+            'Nom'=>$request->Nom,
+            'Prenom'=>$request->Prenom,
+            'Email'=>$request->Email,
+            'Numero_telephone'=>$request->Phone,
+            'Adress'=>$request->Adress,
+            'CIN'=>$request->CIN,
+            'Date_naissance'=>$request->Date_naissance,
+            'Image'=>$Image,
+
+            "Etudiant_actif"=>$request->Etudiant_actif,
+            "Date_inscription"=>$request->Date_inscription,
+            "Sexe"=>$request->Sexe,
+            "Diplome"=>$request->Diplome,
+            "Lieu_naissance"=>$request->Lieu_naissance,
+            "Nom_arabe"=>$request->Nom_arabe,
+            "Prenom_arabe"=>$request->Prenom_arabe,
+            "Niveau_Scolaire"=>$request->Niveau_Scolaire,
+
+        ]);
 
 
         return redirect('/apprenant')->with('success');

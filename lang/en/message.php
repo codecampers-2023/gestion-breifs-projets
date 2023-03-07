@@ -68,6 +68,14 @@ return[
     'btn_affecter'=>'Affect',
     'title1'=>'Learner management',
     'apprenant'=>'Learner List',
+    "sexe" => "Gender",
+    "nom_arabe" => "Arabic Name",
+    "prenom_arabe" => "Arabic First Name",
+    "lieu_naissance" => "Place of Birth",
+    "niveau_Scolaire" => "Educational Level",
+    "etudiant_actif" => "Active Student",
+    "date_inscription" => "Date of Registration",
+    "diplome" => "Diploma"
 
 ]
 
